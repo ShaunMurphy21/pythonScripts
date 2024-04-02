@@ -3,6 +3,24 @@
 import subprocess, sys
 import time
 
+'''
+!!!!!!! I HIGHLY RECOMMEND NEVER DOING THIS !!!!! -- find alternatives where possible
+nano {yourscriptname}.sh
+        #!/bin/bash
+
+            if [ "$1" == 'run' ];then
+                sudo systemctl start crafty
+            fi
+
+            if [ "$1" == 'stop' ];then
+                sudo systemctl stop crafty
+            fi
+chmod +x {yourscriptname}.sh
+!!!!!!!SCARY BIT - HIGHLY RECOMMEND AGAINST!!!!!!! -- ENSURE PERMISSIONS ARE SETUP CORRECTLY
+sudo nano /etc/sudoers
+    yourusername ALL=(root) NOPASSWD: /location/to/script.sh
+'''
+
 class ServiceCmds:
 
     #Making the functionality and commands be initialized as an object (Useless in it's current state, but functionality for more servers is going to be added)
