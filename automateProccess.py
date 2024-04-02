@@ -93,7 +93,7 @@ class ServiceCmds:
             print('Opening browser in: '+ str(n-i) + ' second(s)....')
             time.sleep(1)
         #See attributes in the __init__ function, browserOpn cmd just opens firefox at localhost IP    
-        subprocess.Popen(self.runCmds['browserOpn'] , shell=True,stdout=subprocess.PIPE)
+        subprocess.Popen(self.runCmds['browserOpn'] , shell=False,stdout=subprocess.PIPE)
 
 
     #The 'main' class function, take it the operation from the arguments and run commands based on dict: self.runCmds attr.
@@ -101,19 +101,19 @@ class ServiceCmds:
         if(self.cmd['operation'] == 'run'):
             if (self.cmd['target'] == 'mc'):
                 #Open app alone
-                subprocess.Popen(self.runCmds['mc'] , shell=True,stdout=subprocess.PIPE)
+                subprocess.Popen(self.runCmds['mc'] , shell=False,stdout=subprocess.PIPE)
             if (self.cmd['target'] == 'srv'):
                 #openSrv and web interface
-                subprocess.Popen(self.runCmds['service'].format(shCmd=self.cmd['operation']) , shell=True,stdout=subprocess.PIPE)
+                subprocess.Popen(self.runCmds['service'].format(shCmd=self.cmd['operation']) , shell=False,stdout=subprocess.PIPE)
                 self.browser()
             if (self.cmd['target'] == 'both'):
                 #Open app, srv and web interface
-                subprocess.Popen(self.runCmds['mc'], shell=True,stdout=subprocess.PIPE)
-                subprocess.Popen(self.runCmds['service'].format(shCmd=self.cmd['operation']), shell=True,stdout=subprocess.PIPE)
+                subprocess.Popen(self.runCmds['mc'], shell=False,stdout=subprocess.PIPE)
+                subprocess.Popen(self.runCmds['service'].format(shCmd=self.cmd['operation']), shell=False,stdout=subprocess.PIPE)
                 self.browser()
         if(self.cmd['operation'] == 'stop'):
             #If stopped, only attempt to close the system service - web interface and app will follow.
-            subprocess.Popen(self.runCmds['service'].format(shCmd=self.cmd['operation']), shell=True,stdout=subprocess.PIPE)
+            subprocess.Popen(self.runCmds['service'].format(shCmd=self.cmd['operation']), shell=False,stdout=subprocess.PIPE)
             print('Service shutdown, close java manually.')
         
 
