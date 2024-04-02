@@ -9,11 +9,11 @@ nano {yourscriptname}.sh
         #!/bin/bash
 
             if [ "$1" == 'run' ];then
-                sudo systemctl start crafty
+                do something
             fi
 
             if [ "$1" == 'stop' ];then
-                sudo systemctl stop crafty
+                do something
             fi
 chmod +x {yourscriptname}.sh
 !!!!!!!SCARY BIT - HIGHLY RECOMMEND AGAINST!!!!!!! -- ENSURE PERMISSIONS ARE SETUP CORRECTLY
