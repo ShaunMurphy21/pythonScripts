@@ -4,7 +4,6 @@ import subprocess, sys
 import time
 
 '''
-!!!!!!! I HIGHLY RECOMMEND NEVER DOING THIS !!!!! -- find alternatives where possible
 nano {yourscriptname}.sh
         #!/bin/bash
 
@@ -16,7 +15,6 @@ nano {yourscriptname}.sh
                 do something
             fi
 chmod +x {yourscriptname}.sh
-!!!!!!!SCARY BIT - HIGHLY RECOMMEND AGAINST!!!!!!! -- ENSURE PERMISSIONS ARE SETUP CORRECTLY
 sudo nano /etc/sudoers
     yourusername ALL=(root) NOPASSWD: /location/to/script.sh (NOPASSWD was for testing as I have a rather long pw and it's a pain typing it out !!PLEASE CHANGE YOUR SCRIPT IF YOU USE!!)
 '''
