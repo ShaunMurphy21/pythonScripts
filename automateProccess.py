@@ -4,6 +4,8 @@ import subprocess, sys
 import time
 
 '''
+Very basic bash script example:
+
 nano {yourscriptname}.sh
         #!/bin/bash
 
